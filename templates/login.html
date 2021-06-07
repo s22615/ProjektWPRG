@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orgella - Login Page</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .top-bot{
+            background-color: #86c5da;
+            position: static;
+            width: 100%;
+            height: 20vh;
+        }
+        #mid{
+            position: static;
+            width: 100%;
+            height: 60vh;
+        }
+        .left-right{
+            background-color: #86c5da;
+            width: 35%;
+            height: 60vh;
+            float: left;
+        }
+        #mid-mid{
+            background-color: #72bcd4;
+            width: 30%;
+            height: 60vh;
+            float: left;
+            box-shadow: inset 0 0 1em #4ba9c8;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bot"></div>
+    <div id="mid">
+        <div class="left-right"></div>
+        <div id="mid-mid">
+            <form action="" method="post">
+                <label for="flogin">Login:</label><br>
+                <input type="text" id="flogin" name="flogin"><br>
+                <label for="lpass">Password:</label><br>
+                <input type="text" id="lpass" name="lpass"><br><br>
+                <input type="submit" value="Log in">
+            </form>
+            {% if error %}
+                <p class="error"><strong>Error:</strong>{{ error }}</p>
+            {% endif %}
+        </div>
+        <div class="left-right"></div>
+    </div>
+    <div class="top-bot"></div>
+</body>
+</html>
