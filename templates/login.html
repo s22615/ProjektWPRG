@@ -13,6 +13,7 @@
             position: static;
             width: 100%;
             height: 20vh;
+            text-align: center;
         }
         #mid{
             position: static;
@@ -40,15 +41,12 @@
         <div class="left-right"></div>
         <div id="mid-mid">
             <form action="" method="post">
-                <label for="flogin">Login:</label><br>
-                <input type="text" id="flogin" name="flogin"><br>
-                <label for="lpass">Password:</label><br>
-                <input type="text" id="lpass" name="lpass"><br><br>
+                <label for="username">Login:</label><br>
+                <input type="text" id="username" name="username"><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br><br>
                 <input type="submit" value="Log in">
             </form>
-            {% if error %}
-                <p class="error"><strong>Error:</strong>{{ error }}</p>
-            {% endif %}
         </div>
         <div class="left-right"></div>
     </div>
