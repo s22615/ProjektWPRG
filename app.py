@@ -1,57 +1,69 @@
-from datetime import timedelta
+import datetime
+import sqlite3
 
 from flask import Flask, render_template, request, redirect, url_for, session, g
 
 
-class User:
-    def __init__(self, id, username, password):
-        self.id = id
-        self.username = username
-        self.password = password
-
-    def __repr__(self):
-        return f'<User: {self.username}>'
-
-
-users = []
-users.append(User(id=1, username='Sebastian', password='123'))
-users.append(User(id=2, username='test', password='abc'))
-
 app = Flask(__name__)
 app.secret_key = 'wejoaiw29134b21oeaw'
 
+DATABASE = 'C:/Users/Sebastian/PycharmProjects/ProjektWPRG/komisdb.sqlite'
 
-@app.before_request
-def before_request():
-    if 'user_id' in session:
-        user = [x for x in users if x.id == session['user_id']][0]
-        g.user = user
+
+def get_db():
+    db = getattr(g, '_database', None)
+    if db is None:
+        db = g._database = sqlite3.connect(DATABASE)
+        db.row_factory = sqlite3.Row
+    return db
+
+
+def query_db(query, args=(), one=False):
+    cur = get_db().execute(query, args)
+    rv = cur.fetchall()
+    cur.close()
+    return (rv[0] if rv else None) if one else rv
+
+
+@app.teardown_appcontext
+def close_connection(exception):
+    db = getattr(g, '_database', None)
+    if db is not None:
+        db.close()
+
+
+@app.route('/')
+def main():
+    return redirect(url_for('login'))
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        session.pop('user_id', None)
-
         username = request.form['username']
         password = request.form['password']
 
-        user = [x for x in users if x.username == username][0]
-        if user and user.password == password:
-            session['user_id'] = user.id
+        user = query_db("SELECT login,haslo FROM klient WHERE  login= ?", (username,))
+        if user and user[0]['haslo'] == password:
+            session['username'] = user[0]['login']
+            session['timestamp'] = datetime.datetime.now()
             return redirect(url_for('home'))
-
-        return redirect(url_for('login'))
-
     return render_template('login.html')
+
+
+@app.route('/logout')
+def logout():
+    del session['username']
+    del session['timestamp']
+    return redirect(url_for('login'))
 
 
 @app.route('/home')
 def home():
-    if not g.user:
-        return redirect(url_for('login'))
-
-    return render_template('homePage.html')
+    # time = (datetime.datetime.now() - session['timestamp'])
+    # if time > datetime.timedelta(seconds=30):
+    #     return redirect(url_for('logout'))
+    return render_template('homePage.html', username=session['username'])
 
 
 if __name__ == '__main__':
