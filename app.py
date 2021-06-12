@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from datetime import timedelta
+
+from flask import Flask, render_template, request, redirect, url_for, session, g
 
 
 class User:
@@ -13,9 +15,17 @@ class User:
 
 users = []
 users.append(User(id=1, username='Sebastian', password='123'))
+users.append(User(id=2, username='test', password='abc'))
 
 app = Flask(__name__)
 app.secret_key = 'wejoaiw29134b21oeaw'
+
+
+@app.before_request
+def before_request():
+    if 'user_id' in session:
+        user = [x for x in users if x.id == session['user_id']][0]
+        g.user = user
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -38,6 +48,9 @@ def login():
 
 @app.route('/home')
 def home():
+    if not g.user:
+        return redirect(url_for('login'))
+
     return render_template('homePage.html')
 
 
