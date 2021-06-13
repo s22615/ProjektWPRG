@@ -3,53 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Orgella - Login Page</title>
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-        }
-        .top-bot{
-            background-color: #86c5da;
-            position: static;
-            width: 100%;
-            height: 20vh;
-            text-align: center;
-        }
-        #mid{
-            position: static;
-            width: 100%;
-            height: 60vh;
-        }
-        .left-right{
-            background-color: #86c5da;
-            width: 35%;
-            height: 60vh;
-            float: left;
-        }
-        #mid-mid{
-            background-color: #72bcd4;
-            width: 30%;
-            height: 60vh;
-            float: left;
-            box-shadow: inset 0 0 1em #4ba9c8;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="top-bot"></div>
+    <div id="top"></div>
     <div id="mid">
-        <div class="left-right"></div>
-        <div id="mid-mid">
+        <div class="left-rightLogin"></div>
+        <div id="midLogin">
+            <div id="loginF">
             <form method="POST">
                 <label for="username">Login:</label><br>
-                <input type="text" id="username" name="username"><br>
+                <input type="text" id="username" name="username"><br><br>
                 <label for="password">Password:</label><br>
                 <input type="password" id="password" name="password"><br><br>
                 <input type="submit" value="Log in">
             </form>
+                <br>
+                <a href="{{ url_for('register') }}" id="aSign">"Don't have an account yet?  Sign Up"</a>
+            </div>
         </div>
         <div class="left-right"></div>
     </div>
-    <div class="top-bot"></div>
+    <div id="footer">Website created by: s22615</div>
 </body>
 </html>

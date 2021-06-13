@@ -3,7 +3,6 @@ import sqlite3
 
 from flask import Flask, render_template, request, redirect, url_for, session, g
 
-
 app = Flask(__name__)
 app.secret_key = 'wejoaiw29134b21oeaw'
 
@@ -51,6 +50,11 @@ def login():
     return render_template('login.html')
 
 
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
+
 @app.route('/logout')
 def logout():
     del session['username']
@@ -60,10 +64,8 @@ def logout():
 
 @app.route('/home')
 def home():
-    # time = (datetime.datetime.now() - session['timestamp'])
-    # if time > datetime.timedelta(seconds=30):
-    #     return redirect(url_for('logout'))
-    return render_template('homePage.html', username=session['username'])
+    offer = query_db("SELECT * FROM oferta")
+    return render_template('homePage.html', offer=offer, username=session['username'])
 
 
 if __name__ == '__main__':
