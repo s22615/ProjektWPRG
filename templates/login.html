@@ -6,17 +6,17 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div id="top"></div>
+    <div id="toplogin"></div>
     <div id="mid">
         <div class="left-rightLogin"></div>
-        <div id="midLogin">
+        <div id="midcLogin">
             <div id="loginF">
             <form method="POST">
                 <label for="username">Login:</label><br>
                 <input type="text" id="username" name="username"><br><br>
                 <label for="password">Password:</label><br>
                 <input type="password" id="password" name="password"><br><br>
-                <input type="submit" value="Log in">
+                <input type="submit" id="loginB" value="Log in">
             </form>
                 <br>
                 <a href="{{ url_for('register') }}" id="aSign">"Don't have an account yet?  Sign Up"</a>

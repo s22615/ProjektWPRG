@@ -62,6 +62,11 @@ def logout():
     return redirect(url_for('login'))
 
 
+@app.route('/createoffer')
+def createoffer():
+    return render_template('createoffer.html')
+
+
 @app.route('/home')
 def home():
     offer = query_db("SELECT * FROM oferta")

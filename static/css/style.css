@@ -7,12 +7,6 @@ body{
     background: linear-gradient(#141e30, #243b55);
     color: white;
 }
-#top{
-    position: static;
-    width: 100%;
-    height: 20vh;
-    text-align: center;
-}
 #mid{
     position: static;
     width: 100%;
@@ -25,20 +19,7 @@ body{
     width: 100%;
     font-size: 10px;
 }
-input[type=submit] {
-    background-color: #348fab;
-    border: none;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 22px;
-    font-weight: bold;
-    width: 7em;
-    height: 2em;
-}
-input[type=submit]:hover{
-    background-color:#3a9fbf;
-}
+
 a{
     color: darkgrey;
 }
@@ -51,12 +32,18 @@ a:hover{
 }
 /*Shared by login.html*/
 
+#toplogin{
+    position: static;
+    width: 100%;
+    height: 20vh;
+    text-align: center;
+}
 .left-rightLogin{
     width: 35%;
     height: 60vh;
     float: left;
 }
-#midLogin{
+#midcLogin{
     width: 30%;
     height: 60vh;
     float: left;
@@ -73,26 +60,74 @@ a:hover{
     transform: translate(-50% , -50%);
     position: absolute;
 }
-
+#loginB{
+    background-color: #348fab;
+    border: none;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 22px;
+    font-weight: bold;
+    width: 7em;
+    height: 2em;
+}
+#loginB:hover{
+    background-color:#3a9fbf;
+}
 /*Shared by homePage.html*/
+#navtop{
+    position: static;
+    width: 100%;
+    height: 5vh;
+}
+.navtopE{
+    display: inline-block;
+    float: right;
+    padding-top: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
 
+#tophome{
+    position: static;
+    width: 100%;
+    height: 15vh;
+    text-align: center;
+}
+#titleHome{
+    font-size: 40px;
+    margin: 0 auto;
+    padding: 15px;
+}
 .left-rightHome{
     width: 15%;
-    height: 60vh;
+    height: 77vh;
     float: left;
 }
 #midHome{
     width: 70%;
-    height: 60vh;
+    height: 77vh;
     float: left;
     box-shadow: inset 0 0 1em #348fab;
 }
 #welcomeUser{
-    font-style: italic;
-    font-size: 15px;
+    font-size: 16px;
 }
-#headerUser{
-    width: 25%;
-    height: 5vh;
-    float: right;
+#buttonsHome{
+    background-color: #348fab;
+    border: none;
+    text-decoration: none;
+
+    cursor: pointer;
+    border-radius: 22px;
+    font-size: 7px;
+    font-weight: bold;
+    width: 10em;
+    height: 3em;
+}
+#formlog{
+    margin-top: -4px;
+}
+#buttonsHome:hover{
+    background-color:#3a9fbf;
 }

@@ -4,30 +4,39 @@
     <meta charset="UTF-8">
     <title>Orgella - Home Page</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 <body>
 <div id="navtop">
-
-</div>
-<div id="top">
-    <div id="headerUser">
-            <section id="welcomeUser">Hi, {{ username }}</section>
-            <form action="logout">
-                <input type="submit" value="LOG OUT" name="logout">
-            </form>
+    <div class="navtopE">
+        <form action="logout" id="formlog">
+            <input type="submit" id="buttonsHome" value="LOG OUT" name="logout">
+        </form>
     </div>
-    <br>
-    <h1>Welcome to our website</h1>
-</div>
-    <div id="mid">
-        <div class="left-rightHome"></div>
-        <div id="midHome">
-            {% for each in offer %}
-                {{ each.id_oferty }}{{ each.cena }}{{ each.data_wystawienia }}
-            {% endfor %}
-        </div>
-        <div class="left-right"></div>
+    <div class="navtopE">
+        <form action="createoffer" id="formlog">
+            <input type="submit" id="buttonsHome" value="CREATE OFFER" name="offer">
+        </form>
     </div>
-    <div id="footer">Website created by: s22615</div>
+    <div class="navtopE">
+        <section id="welcomeUser">{{ username }}</section>
+    </div>
+    <div class="navtopE">
+        <img src="{{url_for('static', filename='images/usericongrey.png')}}" alt="user_icon" width="17px" height="17px">
+    </div>
+</div>
+<div id="tophome">
+    <div id="titleHome">Welcome to our website</div>
+</div>
+<div id="mid">
+    <div class="left-rightHome"></div>
+    <div id="midHome">
+        {% for each in offer %}
+            {{ each.id_oferty }}{{ each.cena }}{{ each.data_wystawienia }}
+        {% endfor %}
+    </div>
+    <div class="left-right"></div>
+</div>
+<div id="footer">Website created by: s22615</div>
 </body>
 </html>
