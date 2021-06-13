@@ -2,10 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Orgella - register page</title>
+    <title>Orgella - Register Page</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Привет, друг</h1>
+<div id="midR">
+    <div class="left-rightRegister"></div>
+    <div id="midRegDiv">
+        <div id="midRegForm">
+        <form action="POST">
+            <label for="loginr">Login: </label>
+            <input type="text" id="loginr" name="loginr"><br><br>
+            <label for="passwordr">Password: </label>
+            <input type="password" id="passwordr" name="passwordr"><br><br>
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="surname">Surname: </label>
+            <input type="text" id="surname" name="surname"><br><br>
+            <label for="pesel">Pesel: </label>
+            <input type="text" id="pesel" name="pesel"><br><br>
+            <label for="phone">Phone number: </label>
+            <input type="text" id="phone" name="phone"><br><br>
+            <label for="date">Birth date: </label>
+            <input type="date" id="date" name="date"><br><br>
+            <label for="postcode">Post code: </label>
+            <input type="text" id="postcode" name="postcode"><br><br>
+            <label for="city">City: </label>
+            <input type="text" id="city" name="city"><br><br>
+            <label for="street">Street: </label>
+            <input type="text" id="street" name="street"><br><br>
+            <input type="submit" id="registerB" value="Create an account">
+        </form>
+        </div>
+    </div>
+    <div class="left-rightRegister"></div>
+</div>
 </body>
 </html>
