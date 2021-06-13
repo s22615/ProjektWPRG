@@ -1,3 +1,5 @@
+/*Shared by all*/
+
 body{
     margin: 0;
     padding: 0;
@@ -23,30 +25,6 @@ body{
     width: 100%;
     font-size: 10px;
 }
-.left-rightLogin{
-    width: 35%;
-    height: 60vh;
-    float: left;
-}
-.left-rightHome{
-    width: 15%;
-    height: 60vh;
-    float: left;
-}
-#midLogin{
-    width: 30%;
-    height: 60vh;
-    float: left;
-    box-shadow: inset 0 0 1em #348fab;
-    margin: auto;
-    text-align: center;
-}
-#midHome{
-    width: 70%;
-    height: 60vh;
-    float: left;
-    box-shadow: inset 0 0 1em #348fab;
-}
 input[type=submit] {
     background-color: #348fab;
     border: none;
@@ -61,15 +39,6 @@ input[type=submit] {
 input[type=submit]:hover{
     background-color:#3a9fbf;
 }
-#loginF{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , -50%);
-    position: absolute;
-}
-#aSign{
-    font-size: 10px;
-}
 a{
     color: darkgrey;
 }
@@ -79,6 +48,44 @@ a:link{
 a:hover{
     color: #3a9fbf;
     text-decoration: none;
+}
+/*Shared by login.html*/
+
+.left-rightLogin{
+    width: 35%;
+    height: 60vh;
+    float: left;
+}
+#midLogin{
+    width: 30%;
+    height: 60vh;
+    float: left;
+    box-shadow: inset 0 0 1em #348fab;
+    margin: auto;
+    text-align: center;
+}
+#aSign{
+    font-size: 10px;
+}
+#loginF{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    position: absolute;
+}
+
+/*Shared by homePage.html*/
+
+.left-rightHome{
+    width: 15%;
+    height: 60vh;
+    float: left;
+}
+#midHome{
+    width: 70%;
+    height: 60vh;
+    float: left;
+    box-shadow: inset 0 0 1em #348fab;
 }
 #welcomeUser{
     font-style: italic;
