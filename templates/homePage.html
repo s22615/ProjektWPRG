@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Orgella - Home Page</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-
 </head>
 <body>
 <div id="navtop">
@@ -28,12 +27,28 @@
 <div id="tophome">
     <div id="titleHome">Welcome to our website</div>
 </div>
-<div id="mid">
+<div id="midH">
     <div class="left-rightHome"></div>
-    <div id="midHome">
+    <span id="midHome">
+        <ul class="flex-container">
         {% for each in offer %}
-            {{ each.id_oferty }}{{ each.cena }}{{ each.data_wystawienia }}
+            <li class="flex-item">{{ each.marka }} {{ each.model }} {{ each.rocznik }} <br>
+                <span class="liControlL">Nr rejestracyjny:</span>
+                <span class="liControlR">{{ each.nr_rejestracyjny }}</span> <br>
+                <span class="liControlL">Przebieg:</span>
+                <span class="liControlR">{{ each.przebieg }} km</span><br>
+                <span class="liControlL">Pojemność:</span>
+                <span class="liControlR">{{ each.pojemnosc_skokowa }} cm3</span> <br>
+                <span class="liControlL">Kolor:</span>
+                <span class="liControlR">{{ each.kolor }}</span><br>
+                <span class="liControlL">Data wystwienia:</span>
+                <span class="liControlR">{{ each.data_wystawienia }}</span><br>
+                <span class="liControlL">Cena:</span>
+                <span class="liControlR"><b>{{ each.cena }}</b> zł</span><br>
+                <span class="liControlE">{{ each.imie }} {{ each.nr_tel }}</span>
+            </li>
         {% endfor %}
+        </ul>
     </div>
     <div class="left-right"></div>
 </div>

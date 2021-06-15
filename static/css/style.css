@@ -106,9 +106,14 @@ a:hover{
     height: 77vh;
     float: left;
 }
+#midH{
+    position: static;
+    width: 100%;
+    height: 280vh;
+}
 #midHome{
     width: 70%;
-    height: 77vh;
+    height: 275vh;
     float: left;
     box-shadow: inset 0 0 1em #348fab;
 }
@@ -132,8 +137,41 @@ a:hover{
 #buttonsHome:hover{
     background-color:#3a9fbf;
 }
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    height: fit-content;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.flex-item {
+    padding: 15px 5px 5px;
+    width: 150px;
+    height: 180px;
+    margin: 20px 10px 10px;
+    color: white;
+    box-shadow: inset 0 0 1em #348fab;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+}
+.liControlL{
+    font-size: 8px;
+    text-align: left;
+}
+.liControlR{
+    font-size: 8px;
+    text-align: right;
+}
+.liControlE{
+    font-size: 12px;
+    text-align: center;
+}
 
 /*Shared by register.html*/
+
 #midR{
     position: static;
     width: 100%;
