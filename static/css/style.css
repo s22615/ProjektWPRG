@@ -211,3 +211,42 @@ a:hover{
     background-color:#3a9fbf;
 }
 
+
+/*Shared by controlSite.html*/
+
+#midC{
+    position: static;
+    width: 100%;
+    height: 120vh;
+}
+#midControl{
+    width: 70%;
+    height: 120vh;
+    float: left;
+    box-shadow: inset 0 0 1em #348fab;
+}
+
+.buttonControl{
+    background-color: #348fab;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 2px;
+    border-radius: 22px;
+    font-size: 7px;
+    font-weight: bold;
+    width: 10em;
+    height: 3em;
+}
+
+.flex-itemC {
+    padding: 15px 5px 5px;
+    width: 150px;
+    height: 250px;
+    margin: 20px 10px 10px;
+    color: white;
+    box-shadow: inset 0 0 1em #348fab;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+}

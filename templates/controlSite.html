@@ -24,24 +24,18 @@
         <img src="{{url_for('static', filename='images/usericongrey.png')}}" alt="user_icon" width="17px" height="17px">
     </div>
     <div class="navtopE">
-        |||||||||||
-    </div>
-    <div class="navtopE">
-        <form action="{{ url_for('homesearch') }}" id="formlog" method="POST">
-            <input type="text" name="modelb" id="modelb">
-            <input type="submit" id="buttonsHome" value="Search" name="offer">
-        </form>
+        <a href="{{ url_for('home')}}">Home</a>
     </div>
 </div>
 <div id="tophome">
     <div id="titleHome">Welcome to our website</div>
 </div>
-<div id="midH">
+<div id="midC">
     <div class="left-rightHome"></div>
-    <span id="midHome">
+    <span id="midControl">
         <ul class="flex-container">
         {% for each in offer %}
-            <li class="flex-item">{{ each.marka }} {{ each.model }} {{ each.rocznik }} <br>
+            <li class="flex-itemC">{{ each.marka }} {{ each.model }} {{ each.rocznik }} <br>
                 <span class="liControlL">Nr rejestracyjny:</span>
                 <span class="liControlR">{{ each.nr_rejestracyjny }}</span> <br>
                 <span class="liControlL">Przebieg:</span>
@@ -54,12 +48,18 @@
                 <span class="liControlR">{{ each.data_wystawienia }}</span><br>
                 <span class="liControlL">Cena:</span>
                 <span class="liControlR"><b>{{ each.cena }}</b> zł</span><br>
-                <span class="liControlE">{{ each.imie }} {{ each.nr_tel }}</span>
+                <span class="liControlE">{{ each.imie }} {{ each.nr_tel }}</span><br><hr>
+                <span class="liControlE">
+                    <form action="deleteoffer" method="POST">
+                        <input type="text" name="id_oferty" value="{{ each.id_oferty }}" hidden>
+                        <input type="submit" class="buttonControl" value="DELETE">
+                    </form>
+                    <a href="{{ url_for('editoffer', id_oferty=each.id_oferty)}}">EDIT</a>
+                </span>
             </li>
         {% endfor %}
         </ul>
     </span>
-    </div>
     <div class="left-right"></div>
 </div>
 <div id="footer">Website created by: s22615</div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orgella - Editting offer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div id="midR">
+    <div class="left-rightRegister"></div>
+    <div id="midRegDiv">
+        <div id="midRegForm">
+        <form method="POST">
+            <label for="nrrej">Nr rejestracyjny: </label>
+            <input type="text" id="nrrej" name="nrrej" value="{{ each.nr_rejestracyjny }}"><br><br>
+            <label for="marka">Marka: </label>
+            <input type="text" id="marka" name="marka" value="{{ each.marka }}"><br><br>
+            <label for="model">Model: </label>
+            <input type="text" id="model" name="model" value="{{ each.model }}"><br><br>
+            <label for="rocznik">Rocznik: </label>
+            <input type="number" id="rocznik" name="rocznik" value="{{ each.rocznik }}"><br><br>
+            <label for="przebieg">Przebieg: </label>
+            <input type="number" id="przebieg" name="przebieg" value="{{ each.przebieg }}"><br><br>
+            <label for="pojs">Pojemnosc skokowa: </label>
+            <input type="number" id="pojs" name="pojs" value="{{ each.pojemnosc_skokowa }}"><br><br>
+            <label for="kolor">Kolor: </label>
+            <input type="text" id="kolor" name="kolor" value="{{ each.kolor }}"><br><br>
+            <label for="cena">Cena: </label>
+            <input type="number" id="cena" name="cena" value="{{ each.cena }}"><br><br>
+            <input type="text" id="idklienta" name="idklienta" value="{{ each.id_klienta }}" hidden>
+            <input type="submit" id="registerB" value="Save changes">
+
+        </form>
+        </div>
+    </div>
+    <div class="left-rightRegister"></div>
+</div>
+</body>
+</html>
